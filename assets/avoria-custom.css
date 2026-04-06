@@ -176,9 +176,9 @@
     line-height: 1;
 }
 .av-logo-name {
-    font-family: "Georgia", "Times New Roman", serif;
+    font-family: "Helvetica", "Times New Roman", serif;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 36px;
     color: var(--color-foreground, #111);
     letter-spacing: -0.5px;
     line-height: 1;
