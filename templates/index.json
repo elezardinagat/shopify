@@ -75,6 +75,22 @@
             "image": "shopify://shop_images/download_1.jpg",
             "link": ""
           }
+        },
+        "category_yKBq9B": {
+          "type": "category",
+          "settings": {
+            "label": "Liquid",
+            "image": "shopify://shop_images/download_1.jpg",
+            "link": ""
+          }
+        },
+        "category_LgbmNW": {
+          "type": "category",
+          "settings": {
+            "label": "Liquid",
+            "image": "shopify://shop_images/download_1.jpg",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -85,7 +101,9 @@
         "category_QNwCWz",
         "category_MFxPrk",
         "category_Azrd6z",
-        "category_MLMjGn"
+        "category_MLMjGn",
+        "category_yKBq9B",
+        "category_LgbmNW"
       ],
       "settings": {}
     },
