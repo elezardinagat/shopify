@@ -1,0 +1,98 @@
+<section class="av-collections-section">
+  <div class="av-container">
+    <div style="margin-bottom:32px;">
+      <p class="av-section-label">{{ section.settings.label }}</p>
+      <h2 class="av-section-title" style="margin-bottom:0;">{{ section.settings.title }}</h2>
+    </div>
+
+    <div class="av-collections-grid">
+      {%- for block in section.blocks -%}
+        <a class="av-coll-card" href="{{ block.settings.link }}" style="background:{{ block.settings.bg_gradient | default: 'linear-gradient(160deg,#0d1520 0%,#1a2744 100%)' }};" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: block.settings.title }}
+          {%- endif -%}
+          <div class="av-coll-overlay">
+            <div class="av-coll-eyebrow">{{ block.settings.eyebrow }}</div>
+            <div class="av-coll-title">{{ block.settings.title }}</div>
+            <span class="av-coll-cta">{{ block.settings.cta_text }} →</span>
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avoria Collections Grid",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Eyebrow label",
+      "default": "Sortiment"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Unsere Kollektionen"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_card",
+      "name": "Collection Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow",
+          "default": "Kategorie"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "E-Liquids"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "CTA Text",
+          "default": "Entdecken"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background image"
+        },
+        {
+          "type": "text",
+          "id": "bg_gradient",
+          "label": "Background gradient (CSS)",
+          "default": "linear-gradient(160deg,#0d1520 0%,#1a2744 100%)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avoria Collections Grid",
+      "blocks": [
+        { "type": "collection_card", "settings": { "eyebrow": "Kategorie", "title": "E-Liquids", "cta_text": "Entdecken", "bg_gradient": "linear-gradient(160deg,#0d1520 0%,#1a2744 100%)" } },
+        { "type": "collection_card", "settings": { "eyebrow": "Geschmäcker", "title": "Aromas", "cta_text": "Ansehen", "bg_gradient": "linear-gradient(160deg,#1a0a0a 0%,#2d1010 100%)" } },
+        { "type": "collection_card", "settings": { "eyebrow": "Grundlagen", "title": "Nikotin & Basen", "cta_text": "Mehr erfahren", "bg_gradient": "linear-gradient(160deg,#071a0a 0%,#0f2e12 100%)" } },
+        { "type": "collection_card", "settings": { "eyebrow": "Zubehör", "title": "Vape Zubehör", "cta_text": "Alle Produkte", "bg_gradient": "linear-gradient(160deg,#131007 0%,#231e0c 100%)" } },
+        { "type": "collection_card", "settings": { "eyebrow": "B2B", "title": "Wholesale", "cta_text": "Exklusiv", "bg_gradient": "linear-gradient(160deg,#0a0d1a 0%,#101528 100%)" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

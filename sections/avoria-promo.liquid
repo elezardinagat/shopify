@@ -1,0 +1,69 @@
+<section class="av-promo">
+  <div class="av-container">
+    <div class="av-promo-inner">
+      <div class="av-promo-text">
+        <p class="av-section-label">{{ section.settings.label }}</p>
+        <h2 class="av-promo-title">{{ section.settings.title }}</h2>
+        <p class="av-promo-desc">{{ section.settings.description }}</p>
+        {%- if section.settings.button_text != blank -%}
+          <a href="{{ section.settings.button_link }}" class="av-btn-primary">
+            {{ section.settings.button_text }}
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        {%- endif -%}
+      </div>
+      <div class="av-promo-visual">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', alt: section.settings.title }}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avoria Promo Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Eyebrow label",
+      "default": "Limitiertes Angebot"
+    },
+    {
+      "type": "html",
+      "id": "title",
+      "label": "Title (supports HTML for line breaks)",
+      "default": "Bis zu 30% auf<br>alle Bestseller"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Nur für kurze Zeit — sichere dir jetzt deine Lieblingsprodukte zum besten Preis. Kein Code nötig, Rabatt wird automatisch angerechnet."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Angebote ansehen"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Promo image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avoria Promo Banner"
+    }
+  ]
+}
+{% endschema %}

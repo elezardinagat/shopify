@@ -1,0 +1,125 @@
+{%- assign collection = collections[section.settings.collection] -%}
+
+<section class="av-section">
+  <div class="av-container">
+    <div class="av-section-head">
+      <div>
+        <p class="av-section-label">{{ section.settings.label }}</p>
+        <h2 class="av-section-title">{{ section.settings.title }}</h2>
+      </div>
+      {%- if section.settings.link_text != blank -%}
+        <a href="{{ section.settings.link_url | default: collection.url }}" class="av-view-all">
+          {{ section.settings.link_text }}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="av-product-grid">
+      {%- if collection != blank -%}
+        {%- for product in collection.products limit: section.settings.products_to_show -%}
+          <a class="av-product-card" href="{{ product.url }}">
+            <div class="av-product-img">
+              {%- if product.featured_image != blank -%}
+                {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: product.title }}
+              {%- endif -%}
+              {%- if product.metafields.custom.badge != blank -%}
+                <span class="av-product-badge">{{ product.metafields.custom.badge }}</span>
+              {%- elsif forloop.index <= 3 -%}
+                <span class="av-product-badge">Bestseller</span>
+              {%- endif -%}
+            </div>
+            <div class="av-product-info">
+              <div class="av-product-brand">{{ product.vendor }}</div>
+              <div class="av-product-name">{{ product.title }}</div>
+              {%- if product.metafields.custom.flavor != blank -%}
+                <div class="av-product-flavor">{{ product.metafields.custom.flavor }}</div>
+              {%- endif -%}
+              <div class="av-product-footer">
+                <div>
+                  <div class="av-product-price">{{ product.price | money }}</div>
+                  {%- if product.compare_at_price > product.price -%}
+                    <div class="av-product-old">{{ product.compare_at_price | money }}</div>
+                  {%- endif -%}
+                </div>
+                <button class="av-add-btn" aria-label="In den Warenkorb">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </a>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..4) -%}
+          <div class="av-product-card">
+            <div class="av-product-img">
+              <span class="av-product-badge">Bestseller</span>
+              {{ 'product-1' | placeholder_svg_tag }}
+            </div>
+            <div class="av-product-info">
+              <div class="av-product-brand">Avoria</div>
+              <div class="av-product-name">Beispiel Produkt {{ i }}</div>
+              <div class="av-product-flavor">Geschmack · 10ml</div>
+              <div class="av-product-footer">
+                <div><div class="av-product-price">6,99 €</div></div>
+                <button class="av-add-btn" aria-label="In den Warenkorb">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Avoria Product Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Eyebrow label",
+      "default": "Meistgekauft"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Bestseller"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Products to show",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link text",
+      "default": "Alle anzeigen"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avoria Product Grid"
+    }
+  ]
+}
+{% endschema %}

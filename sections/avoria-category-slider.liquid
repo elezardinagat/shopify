@@ -1,0 +1,80 @@
+<div class="av-category-wrap">
+  <div class="av-container">
+    <div class="av-category-section">
+      <div class="av-slider-wrapper">
+        <div class="av-slider-track">
+          <div class="av-slider-track-inner" id="avSliderTrack">
+            {%- for block in section.blocks -%}
+              <a class="av-cat-card" href="{{ block.settings.link }}" {{ block.shopify_attributes }}>
+                <div class="av-cat-img">
+                  {%- if block.settings.image != blank -%}
+                    {{ block.settings.image | image_url: width: 296 | image_tag: loading: 'lazy', alt: block.settings.label }}
+                  {%- endif -%}
+                </div>
+                <span class="av-cat-label">{{ block.settings.label }}</span>
+              </a>
+            {%- endfor -%}
+            {%- comment -%} Duplicate for seamless marquee loop {%- endcomment -%}
+            {%- for block in section.blocks -%}
+              <div class="av-cat-card" aria-hidden="true">
+                <div class="av-cat-img">
+                  {%- if block.settings.image != blank -%}
+                    {{ block.settings.image | image_url: width: 296 | image_tag: loading: 'lazy', alt: block.settings.label }}
+                  {%- endif -%}
+                </div>
+                <span class="av-cat-label">{{ block.settings.label }}</span>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Avoria Category Slider",
+  "max_blocks": 16,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Category"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avoria Category Slider",
+      "blocks": [
+        { "type": "category", "settings": { "label": "Liquid" } },
+        { "type": "category", "settings": { "label": "Nikotinsalz" } },
+        { "type": "category", "settings": { "label": "Shortfills" } },
+        { "type": "category", "settings": { "label": "E-Zigaretten" } },
+        { "type": "category", "settings": { "label": "Zombie Einweg" } },
+        { "type": "category", "settings": { "label": "Liquid Basen" } },
+        { "type": "category", "settings": { "label": "Aromen" } },
+        { "type": "category", "settings": { "label": "Prefilled Pods" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

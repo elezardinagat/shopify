@@ -1,0 +1,150 @@
+<div class="av-footer">
+  <div class="av-container">
+    <div class="av-footer-grid">
+      <div class="av-footer-brand">
+        <div class="av-f-logo">
+          <svg viewBox="0 0 160 32" width="110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="26" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="28" font-weight="900" fill="white" letter-spacing="-1">Avoria.</text>
+          </svg>
+        </div>
+        <p class="av-footer-desc">{{ section.settings.description }}</p>
+        {%- if section.settings.show_newsletter -%}
+          {%- form 'customer', id: 'av-newsletter-form' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="av-newsletter">
+              <input type="email" name="contact[email]" placeholder="{{ section.settings.newsletter_placeholder }}" required autocomplete="email">
+              <button type="submit">{{ section.settings.newsletter_button }}</button>
+            </div>
+          {%- endform -%}
+        {%- endif -%}
+      </div>
+
+      {%- for block in section.blocks -%}
+        <div class="av-footer-col" {{ block.shopify_attributes }}>
+          <h4>{{ block.settings.heading }}</h4>
+          {%- if block.settings.menu != blank -%}
+            <ul>
+              {%- for link in linklists[block.settings.menu].links -%}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="av-footer-bottom">
+      <span>{{ section.settings.copyright }}</span>
+      <div class="av-footer-socials">
+        {%- if section.settings.social_instagram != blank -%}
+          <a href="{{ section.settings.social_instagram }}" class="av-social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        {%- endif -%}
+        {%- if section.settings.social_youtube != blank -%}
+          <a href="{{ section.settings.social_youtube }}" class="av-social-btn" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.41 19.1C5.12 19.56 12 19.56 12 19.56s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+        {%- endif -%}
+        {%- if section.settings.social_tiktok != blank -%}
+          <a href="{{ section.settings.social_tiktok }}" class="av-social-btn" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+        {%- endif -%}
+        {%- if section.settings.social_facebook != blank -%}
+          <a href="{{ section.settings.social_facebook }}" class="av-social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Avoria Footer",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Brand description",
+      "default": "Elite Sports Nutrition — Premium Supplements für Athleten, die das Beste anstreben. Seit 2004."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show newsletter",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Newsletter placeholder",
+      "default": "Deine E-Mail-Adresse"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "label": "Newsletter button",
+      "default": "Abonnieren"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright text",
+      "default": "© 2026 Avoria Elite Sports Nutrition GmbH. Alle Rechte vorbehalten."
+    },
+    {
+      "type": "url",
+      "id": "social_instagram",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "social_youtube",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "url",
+      "id": "social_tiktok",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "url",
+      "id": "social_facebook",
+      "label": "Facebook URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_column",
+      "name": "Link Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Column heading",
+          "default": "Produkte"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avoria Footer",
+      "blocks": [
+        { "type": "link_column", "settings": { "heading": "Produkte" } },
+        { "type": "link_column", "settings": { "heading": "Unternehmen" } },
+        { "type": "link_column", "settings": { "heading": "Service" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
