@@ -1,27 +1,72 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "category_slider": {
       "type": "avoria-category-slider",
       "blocks": {
-        "cat_1": { "type": "category", "settings": { "label": "Liquid" } },
-        "cat_2": { "type": "category", "settings": { "label": "Nikotinsalz" } },
-        "cat_3": { "type": "category", "settings": { "label": "Shortfills" } },
+        "cat_1": {
+          "type": "category",
+          "settings": {
+            "label": "Liquid",
+            "link": ""
+          }
+        },
+        "cat_2": {
+          "type": "category",
+          "settings": {
+            "label": "Nikotinsalz",
+            "link": ""
+          }
+        },
+        "cat_3": {
+          "type": "category",
+          "settings": {
+            "label": "Shortfills",
+            "link": ""
+          }
+        },
         "cat_4": {
           "type": "category",
-          "settings": { "label": "E-Zigaretten" }
+          "settings": {
+            "label": "E-Zigaretten",
+            "link": ""
+          }
         },
         "cat_5": {
           "type": "category",
-          "settings": { "label": "Zombie Einweg" }
+          "settings": {
+            "label": "Zombie Einweg",
+            "link": ""
+          }
         },
         "cat_6": {
           "type": "category",
-          "settings": { "label": "Liquid Basen" }
+          "settings": {
+            "label": "Liquid Basen",
+            "link": ""
+          }
         },
-        "cat_7": { "type": "category", "settings": { "label": "Aromen" } },
+        "cat_7": {
+          "type": "category",
+          "settings": {
+            "label": "Aromen",
+            "link": ""
+          }
+        },
         "cat_8": {
           "type": "category",
-          "settings": { "label": "Prefilled Pods" }
+          "settings": {
+            "label": "Prefilled Pods",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -84,7 +129,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "Jetzt entdecken  →",
-                "link": "shopify:\/\/collections\/all",
+                "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
                 "width": "fit-content",
@@ -99,7 +144,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "Bestseller ansehen",
-                "link": "shopify:\/\/collections\/all",
+                "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "width": "fit-content",
@@ -110,15 +155,20 @@
               "blocks": {}
             }
           },
-          "block_order": ["button_gnkP6Q", "button_YFkRPg"]
+          "block_order": [
+            "button_gnkP6Q",
+            "button_YFkRPg"
+          ]
         }
       },
-      "block_order": ["group_fd7xhL"],
+      "block_order": [
+        "group_fd7xhL"
+      ],
       "custom_css": [],
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify:\/\/shop_images\/download.jpg",
+        "image_1": "shopify://shop_images/download.jpg",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
@@ -132,7 +182,7 @@
         "vertical_alignment": "flex-end",
         "align_baseline": true,
         "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "flex-end",
         "gap": 0,
         "section_width": "page-width",
         "section_height": "medium",
@@ -153,8 +203,10 @@
       "settings": {
         "label": "Meistgekauft",
         "title": "Bestseller",
+        "collection": "",
         "products_to_show": 4,
-        "link_text": "Alle anzeigen"
+        "link_text": "Alle anzeigen",
+        "link_url": ""
       }
     },
     "video_showcase": {
@@ -162,12 +214,31 @@
       "blocks": {
         "vid_1": {
           "type": "video",
-          "settings": { "label": "Produkt Highlight" }
+          "settings": {
+            "label": "Produkt Highlight",
+            "video_url": ""
+          }
         },
-        "vid_2": { "type": "video", "settings": { "label": "Brand Story" } },
-        "vid_3": { "type": "video", "settings": { "label": "Neue Kollektion" } }
+        "vid_2": {
+          "type": "video",
+          "settings": {
+            "label": "Brand Story",
+            "video_url": ""
+          }
+        },
+        "vid_3": {
+          "type": "video",
+          "settings": {
+            "label": "Neue Kollektion",
+            "video_url": ""
+          }
+        }
       },
-      "block_order": ["vid_1", "vid_2", "vid_3"],
+      "block_order": [
+        "vid_1",
+        "vid_2",
+        "vid_3"
+      ],
       "settings": {}
     },
     "collections_grid": {
@@ -179,6 +250,7 @@
             "eyebrow": "Kategorie",
             "title": "E-Liquids",
             "cta_text": "Entdecken",
+            "link": "",
             "bg_gradient": "linear-gradient(160deg,#0d1520 0%,#1a2744 100%)"
           }
         },
@@ -188,6 +260,7 @@
             "eyebrow": "Geschmäcker",
             "title": "Aromas",
             "cta_text": "Ansehen",
+            "link": "",
             "bg_gradient": "linear-gradient(160deg,#1a0a0a 0%,#2d1010 100%)"
           }
         },
@@ -197,6 +270,7 @@
             "eyebrow": "Grundlagen",
             "title": "Nikotin & Basen",
             "cta_text": "Mehr erfahren",
+            "link": "",
             "bg_gradient": "linear-gradient(160deg,#071a0a 0%,#0f2e12 100%)"
           }
         },
@@ -206,6 +280,7 @@
             "eyebrow": "Zubehör",
             "title": "Vape Zubehör",
             "cta_text": "Alle Produkte",
+            "link": "",
             "bg_gradient": "linear-gradient(160deg,#131007 0%,#231e0c 100%)"
           }
         },
@@ -215,12 +290,22 @@
             "eyebrow": "B2B",
             "title": "Wholesale",
             "cta_text": "Exklusiv",
+            "link": "",
             "bg_gradient": "linear-gradient(160deg,#0a0d1a 0%,#101528 100%)"
           }
         }
       },
-      "block_order": ["coll_1", "coll_2", "coll_3", "coll_4", "coll_5"],
-      "settings": { "label": "Sortiment", "title": "Unsere Kollektionen" }
+      "block_order": [
+        "coll_1",
+        "coll_2",
+        "coll_3",
+        "coll_4",
+        "coll_5"
+      ],
+      "settings": {
+        "label": "Sortiment",
+        "title": "Unsere Kollektionen"
+      }
     },
     "promo_banner": {
       "type": "avoria-promo",
@@ -228,7 +313,8 @@
         "label": "Limitiertes Angebot",
         "title": "Bis zu 30% auf<br>alle Bestseller",
         "description": "Nur für kurze Zeit — sichere dir jetzt deine Lieblingsprodukte zum besten Preis. Kein Code nötig, Rabatt wird automatisch angerechnet.",
-        "button_text": "Angebote ansehen"
+        "button_text": "Angebote ansehen",
+        "button_link": ""
       }
     },
     "new_arrivals": {
@@ -236,8 +322,10 @@
       "settings": {
         "label": "Neu eingetroffen",
         "title": "Neuheiten",
+        "collection": "",
         "products_to_show": 4,
-        "link_text": "Alle ansehen"
+        "link_text": "Alle ansehen",
+        "link_url": ""
       }
     },
     "value_props": {
@@ -276,7 +364,12 @@
           }
         }
       },
-      "block_order": ["val_1", "val_2", "val_3", "val_4"],
+      "block_order": [
+        "val_1",
+        "val_2",
+        "val_3",
+        "val_4"
+      ],
       "settings": {}
     }
   },
