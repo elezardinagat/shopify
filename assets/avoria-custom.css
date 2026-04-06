@@ -444,6 +444,50 @@
     background: rgba(255, 255, 255, 0.08);
 }
 
+/* ─── HERO BUTTON OVERRIDES ─────────────────────────────── */
+/* Primary button in hero: white pill, dark text, arrow */
+.hero-wrapper .button:not(.button-secondary) {
+    --button-color: #111;
+    --button-background-color: #fff;
+    --button-border-color: #fff;
+    border-radius: 999px !important;
+    padding-inline: 28px;
+    height: 52px;
+    font-size: 14.5px;
+    font-weight: 600;
+    transition:
+        transform 0.18s,
+        box-shadow 0.18s;
+}
+.hero-wrapper .button:not(.button-secondary):hover {
+    --button-color: #111;
+    --button-background-color: #fff;
+    --button-border-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.18);
+}
+
+/* Secondary button in hero: transparent + white border outline, white text */
+.hero-wrapper .button-secondary {
+    --button-color: #fff;
+    --button-background-color: transparent;
+    --button-border-color: rgba(255, 255, 255, 0.35);
+    --button-border-width: 1.5px;
+    border-radius: 999px !important;
+    padding-inline: 28px;
+    height: 52px;
+    font-size: 14.5px;
+    font-weight: 500;
+    transition:
+        border-color 0.18s,
+        background-color 0.18s;
+}
+.hero-wrapper .button-secondary:hover {
+    --button-color: #fff;
+    --button-background-color: rgba(255, 255, 255, 0.08);
+    --button-border-color: rgba(255, 255, 255, 0.6);
+}
+
 /* ─── SECTION HEADERS ───────────────────────────────────── */
 .av-section {
     padding: 80px 0;
