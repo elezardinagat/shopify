@@ -36,9 +36,12 @@
         gap: 24px !important;
         align-items: center;
         padding-block: 14px !important;
-        max-width: 1300px;
+        max-width: var(--av-container, 1300px);
         margin-left: auto;
         margin-right: auto;
+        padding-left: var(--av-pad, 40px);
+        padding-right: var(--av-pad, 40px);
+        box-sizing: border-box;
     }
 
     #header-component[data-menu-style="menu"] .header__row--top .header__column--left {
@@ -151,9 +154,12 @@
 @media screen and (min-width: 750px) {
     .header__row--bottom .header__columns {
         padding-block: 0 !important;
-        max-width: 1300px;
+        max-width: var(--av-container, 1300px);
         margin-left: auto;
         margin-right: auto;
+        padding-left: var(--av-pad, 40px);
+        padding-right: var(--av-pad, 40px);
+        box-sizing: border-box;
     }
     .header__row--bottom .menu-list__link {
         padding-block: 12px;
