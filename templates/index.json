@@ -16,68 +16,76 @@
           "type": "category",
           "settings": {
             "label": "Liquid",
+            "image": "shopify://shop_images/download_1.jpg",
             "link": ""
           }
         },
-        "cat_2": {
-          "type": "category",
-          "settings": {
-            "label": "Nikotinsalz",
-            "link": ""
-          }
-        },
-        "cat_3": {
-          "type": "category",
-          "settings": {
-            "label": "Shortfills",
-            "link": ""
-          }
-        },
-        "cat_4": {
-          "type": "category",
-          "settings": {
-            "label": "E-Zigaretten",
-            "link": ""
-          }
-        },
-        "cat_5": {
-          "type": "category",
-          "settings": {
-            "label": "Zombie Einweg",
-            "link": ""
-          }
-        },
-        "cat_6": {
-          "type": "category",
-          "settings": {
-            "label": "Liquid Basen",
-            "link": ""
-          }
-        },
-        "cat_7": {
+        "category_KWzMYk": {
           "type": "category",
           "settings": {
             "label": "Aromen",
+            "image": "shopify://shop_images/download_1.jpg",
             "link": ""
           }
         },
-        "cat_8": {
+        "category_aKRKNA": {
           "type": "category",
           "settings": {
             "label": "Prefilled Pods",
+            "image": "shopify://shop_images/download_1.jpg",
+            "link": ""
+          }
+        },
+        "category_ef3ebM": {
+          "type": "category",
+          "settings": {
+            "label": "Nikotinsalz",
+            "image": "shopify://shop_images/download_1.jpg",
+            "link": ""
+          }
+        },
+        "category_QNwCWz": {
+          "type": "category",
+          "settings": {
+            "label": "Liquid Basen",
+            "image": "shopify://shop_images/download_1.jpg",
+            "link": ""
+          }
+        },
+        "category_MFxPrk": {
+          "type": "category",
+          "settings": {
+            "label": "Shortfills",
+            "image": "shopify://shop_images/download_1.jpg",
+            "link": ""
+          }
+        },
+        "category_Azrd6z": {
+          "type": "category",
+          "settings": {
+            "label": "Zombie Einweg",
+            "image": "shopify://shop_images/download_1.jpg",
+            "link": ""
+          }
+        },
+        "category_MLMjGn": {
+          "type": "category",
+          "settings": {
+            "label": "Liquid",
+            "image": "shopify://shop_images/download_1.jpg",
             "link": ""
           }
         }
       },
       "block_order": [
         "cat_1",
-        "cat_2",
-        "cat_3",
-        "cat_4",
-        "cat_5",
-        "cat_6",
-        "cat_7",
-        "cat_8"
+        "category_KWzMYk",
+        "category_aKRKNA",
+        "category_ef3ebM",
+        "category_QNwCWz",
+        "category_MFxPrk",
+        "category_Azrd6z",
+        "category_MLMjGn"
       ],
       "settings": {}
     },
