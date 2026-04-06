@@ -16,68 +16,58 @@
           "type": "category",
           "settings": {
             "label": "Liquid",
+            "image": "shopify://shop_images/download_1.jpg",
             "link": ""
           }
         },
-        "cat_2": {
+        "category_KWzMYk": {
           "type": "category",
           "settings": {
-            "label": "Nikotinsalz",
+            "label": "Liquid",
+            "image": "shopify://shop_images/download_1.jpg",
             "link": ""
           }
         },
-        "cat_3": {
+        "category_aKRKNA": {
           "type": "category",
           "settings": {
-            "label": "Shortfills",
+            "label": "Liquid",
+            "image": "shopify://shop_images/download_1.jpg",
             "link": ""
           }
         },
-        "cat_4": {
+        "category_ef3ebM": {
           "type": "category",
           "settings": {
-            "label": "E-Zigaretten",
+            "label": "Liquid",
+            "image": "shopify://shop_images/download_1.jpg",
             "link": ""
           }
         },
-        "cat_5": {
+        "category_QNwCWz": {
           "type": "category",
           "settings": {
-            "label": "Zombie Einweg",
+            "label": "Liquid",
+            "image": "shopify://shop_images/download_1.jpg",
             "link": ""
           }
         },
-        "cat_6": {
+        "category_MFxPrk": {
           "type": "category",
           "settings": {
-            "label": "Liquid Basen",
-            "link": ""
-          }
-        },
-        "cat_7": {
-          "type": "category",
-          "settings": {
-            "label": "Aromen",
-            "link": ""
-          }
-        },
-        "cat_8": {
-          "type": "category",
-          "settings": {
-            "label": "Prefilled Pods",
+            "label": "Liquid",
+            "image": "shopify://shop_images/download_1.jpg",
             "link": ""
           }
         }
       },
       "block_order": [
         "cat_1",
-        "cat_2",
-        "cat_3",
-        "cat_4",
-        "cat_5",
-        "cat_6",
-        "cat_7",
-        "cat_8"
+        "category_KWzMYk",
+        "category_aKRKNA",
+        "category_ef3ebM",
+        "category_QNwCWz",
+        "category_MFxPrk"
       ],
       "settings": {}
     },
