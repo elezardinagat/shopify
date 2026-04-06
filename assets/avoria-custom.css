@@ -36,6 +36,9 @@
         gap: 24px !important;
         align-items: center;
         padding-block: 14px !important;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     #header-component[data-menu-style="menu"] .header__row--top .header__column--left {
@@ -148,6 +151,9 @@
 @media screen and (min-width: 750px) {
     .header__row--bottom .header__columns {
         padding-block: 0 !important;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .header__row--bottom .menu-list__link {
         padding-block: 12px;
