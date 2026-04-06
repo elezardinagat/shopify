@@ -26,6 +26,137 @@
     --av-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.14);
 }
 
+/* ─── AVORIA HEADER ─────────────────────────────────────── */
+
+/* Top row: Logo | Inline Search Bar | Actions */
+@media screen and (min-width: 750px) {
+    #header-component[data-menu-style="menu"] .header__row--top .header__columns {
+        grid-template-columns: auto 1fr auto !important;
+        grid-template-areas: "left center right" !important;
+        gap: 24px !important;
+        align-items: center;
+        padding-block: 14px !important;
+    }
+
+    #header-component[data-menu-style="menu"] .header__row--top .header__column--left {
+        display: contents !important;
+    }
+
+    #header-component[data-menu-style="menu"] .header__row--top .header-logo {
+        grid-area: left;
+        flex-shrink: 0;
+    }
+
+    /* Inline search bar occupies center */
+    #header-component[data-menu-style="menu"] .header__row--top .av-inline-search-wrapper {
+        grid-area: center;
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    /* Hide the default icon-style search trigger on desktop */
+    #header-component[data-menu-style="menu"] .header__row--top .search-action:not(.av-inline-search-wrapper) {
+        display: none !important;
+    }
+
+    #header-component[data-menu-style="menu"] .header__row--top .header__column--right {
+        grid-area: right;
+        gap: 4px !important;
+        flex-shrink: 0;
+    }
+}
+
+/* Inline search bar button */
+.av-search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    padding: 0 18px;
+    gap: 10px;
+    border: 1.5px solid var(--av-border, #e0e0e0);
+    border-radius: var(--av-radius-pill, 999px);
+    background: var(--av-white, #fff);
+    cursor: text;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--av-gray-400, #999);
+    text-align: left;
+    outline: none;
+    white-space: nowrap;
+}
+.av-search-bar:hover {
+    border-color: var(--av-gray-300, #bbb);
+}
+.av-search-bar:focus-visible {
+    border-color: var(--av-dark, #111);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+}
+
+.av-search-bar__icon {
+    flex-shrink: 0;
+    color: var(--av-gray-400, #999);
+    display: flex;
+    align-items: center;
+}
+.av-search-bar__icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.av-search-bar__text {
+    color: var(--av-gray-400, #999);
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+}
+
+/* Hide inline search on mobile */
+@media screen and (max-width: 749px) {
+    .av-inline-search-wrapper {
+        display: none !important;
+    }
+}
+
+/* Wishlist heart icon */
+.av-wishlist-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.av-wishlist-icon .svg-wrapper {
+    height: var(--button-size, 44px);
+    width: var(--button-size, 44px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.av-wishlist-icon svg {
+    width: var(--icon-size-md, 20px);
+    height: var(--icon-size-md, 20px);
+}
+
+/* Bottom row: Navigation menu */
+@media screen and (min-width: 750px) {
+    .header__row--bottom .header__columns {
+        padding-block: 0 !important;
+    }
+    .header__row--bottom .menu-list__link {
+        padding-block: 12px;
+    }
+}
+
+/* Header border between top and bottom rows */
+.header__row--top {
+    border-bottom: 1px solid var(--av-border, #e8e8e8) !important;
+}
+
 /* ─── ANNOUNCEMENT BAR ──────────────────────────────────── */
 .av-announce {
     background: #000000;

@@ -1,0 +1,19 @@
+{%- doc -%}
+  Renders an inline search bar that opens the predictive search modal on click.
+  Styled to look like a visible search input field in the header.
+{%- enddoc -%}
+
+<search-button class="search-action av-inline-search-wrapper">
+  <button
+    on:click="#search-modal/showDialog"
+    class="av-search-bar"
+    aria-label="{{ 'content.search_input_label' | t }}"
+    aria-haspopup="dialog"
+    type="button"
+  >
+    <span class="av-search-bar__icon svg-wrapper">
+      {{ 'icon-search.svg' | inline_asset_content }}
+    </span>
+    <span class="av-search-bar__text">Suche nach Liquid, E-Zigaretten, ...</span>
+  </button>
+</search-button>
