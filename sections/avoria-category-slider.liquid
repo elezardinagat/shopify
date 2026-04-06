@@ -20,6 +20,17 @@
                 <span class="av-cat-label">{{ block.settings.label }}</span>
               </a>
             {%- endfor -%}
+            {%- comment -%} Duplicate for seamless marquee loop {%- endcomment -%}
+            {%- for block in section.blocks -%}
+              <div class="av-cat-card" aria-hidden="true">
+                <div class="av-cat-img">
+                  {%- if block.settings.image != blank -%}
+                    {{ block.settings.image | image_url: width: 296 | image_tag: loading: 'lazy', alt: block.settings.label }}
+                  {%- endif -%}
+                </div>
+                <span class="av-cat-label">{{ block.settings.label }}</span>
+              </div>
+            {%- endfor -%}
           </div>
         </div>
       </div>
